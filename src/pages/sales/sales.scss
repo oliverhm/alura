@@ -1,0 +1,51 @@
+page-sales {
+	.card {
+		background-color: color($colors, gray-light);
+		margin-bottom: 30px;
+		overflow: visible;
+		position: relative;
+
+		.card-content {
+			padding: 10px;
+		}
+
+		.card-title {
+			color: color($colors, green-dark);
+			font-size: 20px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+		.sales-date {
+			background-color: color($colors, green);
+			color: #FFF;
+			opacity: 0.8;
+			padding: 8px;
+			position: absolute;
+			text-align: center;
+			text-transform: uppercase;
+			top: -10px;
+
+			.day,
+			.month {
+				font-size: 50px;
+				font-weight: bold;
+				line-height: 1em;
+			}
+
+			.month {
+				font-size: 30px;
+			}
+
+			.label {
+				font-size: 16px;
+			}
+		}
+
+		.sales-desc {
+			p {
+				font-weight: 300;
+			}
+		}
+	}
+}

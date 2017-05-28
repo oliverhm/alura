@@ -1,0 +1,21 @@
+page-login {
+  .content {
+    .logo {
+      display: block;
+      height: 200px;
+      width: 200px;
+      margin: 0 auto;
+    }
+
+    form {
+      .item {
+        padding: 0 16px;
+      }
+
+      .button {
+        background-color: color($colors, green);
+        height: 50px;
+      }
+    }
+  }
+}

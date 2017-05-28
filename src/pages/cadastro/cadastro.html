@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Quase lá!!!</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2>{{ carro.nome }}</h2>
+  <p>{{ precoTotal}}</p>
+  <form (ngSubmit)="agenda()">
+    <ion-item>
+      <ion-label stacked>Nome</ion-label>
+      <ion-input [(ngModel)]="agendamento.nome" name="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Endereço</ion-label>
+      <ion-input [(ngModel)]="agendamento.endereco" name="endereco"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>E-mail</ion-label>
+      <ion-input [(ngModel)]="agendamento.email" name="email"></ion-input>
+    </ion-item>
+    <ion-item (click)="obtemData()">
+      <ion-label stacked>Data</ion-label>
+      <ion-datetime disabled="ture" [(ngModel)]="agendamento.data" name="data" displayFormat="DD/MM/YY"></ion-datetime>
+    </ion-item>
+    <button ion-button block type="submit">Finalizar agendamento</button>
+  </form>
+</ion-content>
