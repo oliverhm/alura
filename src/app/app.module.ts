@@ -12,6 +12,7 @@ import { LoginPage } from '../pages/login/login';
 import { UsuarioService } from '../domain/usuario/usuario-service';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { SalesPage } from '../pages/sales/sales';
+import { SalePage } from '../pages/sale/sale';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
@@ -33,7 +34,8 @@ function provideStorage() {
     AgendamentosPage,
     LoginPage,
     PerfilPage,
-    SalesPage
+    SalesPage,
+    SalePage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -47,7 +49,8 @@ function provideStorage() {
     AgendamentosPage,
     LoginPage,
     PerfilPage,
-    SalesPage
+    SalesPage,
+    SalePage
   ],
   providers: [{provide: ErrorHandler,
                useClass: IonicErrorHandler}, 

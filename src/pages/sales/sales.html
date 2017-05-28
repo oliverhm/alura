@@ -13,55 +13,25 @@
 </ion-header>
 
 
-<ion-content padding>
-	<ion-card>
-	  <img src="assets/img/sales/sales.png"/>
-	  <ion-card-content>
-	    <ion-card-title>
-	      Sexta da Carne Imperdível
-      </ion-card-title>
-	    <div class="sales-date">
-	      <div class="label">Apenas</div>
-	      <div class="day">20</div>
-	      <div class="month">Jun</div>
-	    </div>
-	    <div class="sales-desc">
-	    	<p>Corra e Aproveite, em breve irá esgotar!!</p>
-	    </div>
-	  </ion-card-content>
-	</ion-card>
-
-	<ion-card>
-	  <img src="https://unsplash.it/200/100/?random"/>
-	  <ion-card-content>
-	    <ion-card-title>
-	      Sexta da Carne Imperdível
-      </ion-card-title>
-	    <div class="sales-date">
-	      <div class="label">Apenas</div>
-	      <div class="day">20</div>
-	      <div class="month">Jun</div>
-	    </div>
-	    <div class="sales-desc">
-	    	<p>Corra e Aproveite, em breve irá esgotar!!</p>
-	    </div>
-	  </ion-card-content>
-	</ion-card>
-
-	<ion-card>
-	  <img src="https://unsplash.it/200/100/?blur"/>
-	  <ion-card-content>
-	    <ion-card-title>
-	      Sexta da Carne Imperdível
-      </ion-card-title>
-	    <div class="sales-date">
-	      <div class="label">Apenas</div>
-	      <div class="day">20</div>
-	      <div class="month">Jun</div>
-	    </div>
-	    <div class="sales-desc">
-	    	<p>Corra e Aproveite, em breve irá esgotar!!</p>
-	    </div>
-	  </ion-card-content>
-	</ion-card>
+<ion-content>
+	<ion-list no-lines>
+	  <button ion-item *ngFor="let sale of sales" (click)="pushSalePage()">
+			<ion-card>
+				<img src="assets/img/sales/sales.png"/>
+				<ion-card-content>
+					<ion-card-title>
+						{{ sale.title }}
+					</ion-card-title>
+					<div class="sales-date">
+						<div class="label">Apenas</div>
+						<div class="day">20</div>
+						<div class="month">Jun</div>
+					</div>
+					<div class="sales-desc">
+						<p>{{ sale.description }}</p>
+					</div>
+				</ion-card-content>
+			</ion-card>
+	  </button>
+	</ion-list>
 </ion-content>
