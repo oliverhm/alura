@@ -11,7 +11,7 @@ import { SalesPage } from '../pages/sales/sales';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = SalesPage;
+  rootPage = LoginPage;
 
   public paginas = [
     { titulo : 'Agendamentos', componente: AgendamentosPage },

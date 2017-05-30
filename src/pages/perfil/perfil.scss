@@ -1,3 +1,32 @@
 page-perfil {
+	.profile-picture {
+		border-radius: 50%;
+		border: 1px solid color($colors, orange-dark);
+		display: block;
+		height: 128px;
+		margin: 0 auto 30px;
+		position: relative;
+		width: 128px;
 
+		img {
+			padding: 15px;
+		}
+	}
+
+	.take-picture {
+		bottom: -20px;
+		color: color($colors, orange-dark);
+		position: absolute;
+		width: 100%;
+
+		.icon {
+			font-size: 2.2em;
+		}
+	}
+
+	.list {
+		.item {
+			color: color($colors, orange-dark);
+		}
+	}
 }

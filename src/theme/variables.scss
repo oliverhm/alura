@@ -38,6 +38,8 @@ $colors: (
   orange-dark:    #8C3F2E,
 );
 
+$toolbar-background: color($colors, orange-dark);
+
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

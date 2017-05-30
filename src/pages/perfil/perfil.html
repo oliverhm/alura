@@ -1,34 +1,36 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>perfil</ion-title>
+    <ion-title>Perfil de {{ usuarioLogado.nome }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  
-  <ion-card>
+  <div class="profile-picture">
+    <img src="assets/img/user/lion.png" height="128" width="128">
+    <button class="take-picture" ion-button clear icon-only item-right (click)="tiraFoto()">
+      <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+    </button>
+  </div>
 
+  <ion-list>
     <ion-item>
-        <ion-avatar item-left *ngIf="url">
-          <img [src]="url">
-        </ion-avatar>
-        {{ usuarioLogado.nome }}
-        <button ion-button outline item-right (click)="tiraFoto()">
-            <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
-        </button>
+      <ion-icon ios="ios-contact" md="md-contact" item-left></ion-icon>
+      {{ usuarioLogado.nome }}
     </ion-item>
     <ion-item>
-      <p>{{ usuarioLogado.dataNascimento }}</p>
+      <ion-icon ios="ios-calendar" md="md-calendar" item-left></ion-icon>
+      {{ usuarioLogado.dataNascimento }}
     </ion-item>
     <ion-item>
-      <p>{{ usuarioLogado.email }}</p>
+      <ion-icon ios="ios-mail" md="md-mail" item-left></ion-icon>
+      {{ usuarioLogado.email }}
     </ion-item>
     <ion-item>
-      <p>{{ usuarioLogado.telefone }}</p>
+      <ion-icon ios="ios-phone-portrait" md="md-phone-portrait" item-left></ion-icon>
+      {{ usuarioLogado.telefone }}
     </ion-item>
-  </ion-card>
-
+  </ion-list>
 </ion-content>

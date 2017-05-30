@@ -13,11 +13,24 @@
 </ion-header>
 
 
-<ion-content padding>
-	<ion-list>
+<ion-content>
+	<ion-list no-lines>
 	  <button ion-item *ngFor="let product of products">
-	    {{ product.produto }}
-	    {{ product.valor }}
-	  </button>  
+			<ion-card>
+				<ion-card-content>
+					<ion-grid>
+					  <ion-row>
+					    <ion-col col-3>
+	    					<img class="product-img" src="assets/img/products/tixan.png"/>
+					    </ion-col>
+					    <ion-col col-9>
+					    	<div class="product-title">{{ product.produto }}</div>
+						    <div class="product-value">{{ product.valor }}</div>
+					   	</ion-col>
+					  </ion-row>
+					</ion-grid>
+				</ion-card-content>
+			</ion-card>
+	  </button>
 	</ion-list>
 </ion-content>
