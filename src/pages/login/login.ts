@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { SalesPage } from '../sales/sales';
 import { UsuarioService } from '../../domain/usuario/usuario-service';
 
 @Component({
@@ -22,7 +22,7 @@ export class LoginPage {
     this._service.efetuaLogin(this.email, this.senha)
       .then(usuario => {
         console.log(usuario);
-        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(SalesPage);
       })
       .catch(() => {
         this._alertCtrl.create({
