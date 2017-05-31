@@ -1,18 +1,21 @@
-import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { EscolhaPage } from '../pages/escolha/escolha';
-import { CadastroPage } from '../pages/cadastro/cadastro';
-import { AgendamentoService } from '../domain/agendamento/agendamento-service';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { OneSignal } from '@ionic-native/onesignal';
 import { Storage } from '@ionic/storage';
+
 import { AgendamentoDao } from '../domain/agendamento/agendamento-dao';
+import { AgendamentoService } from '../domain/agendamento/agendamento-service';
 import { AgendamentosPage } from '../pages/agendamentos/agendamentos';
+import { CadastroPage } from '../pages/cadastro/cadastro';
+import { EscolhaPage } from '../pages/escolha/escolha';
+import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
-import { UsuarioService } from '../domain/usuario/usuario-service';
 import { PerfilPage } from '../pages/perfil/perfil';
-import { SalesPage } from '../pages/sales/sales';
 import { SalePage } from '../pages/sale/sale';
+import { SalesPage } from '../pages/sales/sales';
+import { UsuarioService } from '../domain/usuario/usuario-service';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
@@ -52,11 +55,13 @@ function provideStorage() {
     SalesPage,
     SalePage
   ],
-  providers: [{provide: ErrorHandler,
-               useClass: IonicErrorHandler}, 
-               AgendamentoService, 
-               {provide : Storage, useFactory: provideStorage},
-               AgendamentoDao,
-               UsuarioService]
+  providers: [
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    AgendamentoService,
+    { provide : Storage, useFactory: provideStorage },
+    AgendamentoDao,
+    UsuarioService,
+    OneSignal
+  ]
 })
 export class AppModule {}
