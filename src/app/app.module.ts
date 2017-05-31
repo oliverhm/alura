@@ -1,6 +1,10 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+// import { Push, PushToken } from '@ionic/cloud-angular';
 import { MyApp } from './app.component';
+
+
 import { HomePage } from '../pages/home/home';
 import { EscolhaPage } from '../pages/escolha/escolha';
 import { CadastroPage } from '../pages/cadastro/cadastro';
@@ -25,6 +29,24 @@ function provideStorage() {
   });
 }
 
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': '4bb52b3d'
+  },
+  'push': {
+    'sender_id': '392173710904',
+    'pluginConfig': {
+      'ios': {
+        'badge': true,
+        'sound': true
+      },
+      'android': {
+        'iconColor': '#343434'
+      }
+    }
+  }
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -38,7 +60,8 @@ function provideStorage() {
     SalePage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    CloudModule.forRoot(cloudSettings)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
