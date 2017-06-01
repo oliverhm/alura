@@ -3,6 +3,7 @@ import { Platform, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { LoginPage } from '../pages/login/login';
 import { PerfilPage } from '../pages/perfil/perfil';
+import { OneSignal } from '@ionic-native/onesignal';
 
 @Component({
   templateUrl: 'app.html'
@@ -18,30 +19,27 @@ export class MyApp {
   ];
 
   @ViewChild(Nav) public nav : Nav;
-  constructor(private platform: Platform) {
+  constructor(private platform: Platform, private oneSignal: OneSignal) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
-    });
-
-    this.initializeApp();
-  }
 
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this._window.plugins.OneSignal.startInit(this.appId, this.googleProjectId);
-      this._window.plugins.OneSignal.inFocusDisplaying(this._window.plugins.OneSignal.OSInFocusDisplayOption.Notification);
-      this._window.plugins.OneSignal.setSubscription(true);
-      this._window.plugins.OneSignal.handleNotificationReceived().subscribe(() => {
-        // handle received here how you wish.
+      this.oneSignal.startInit(this.appId, this.googleProjectId);
+
+      this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
+
+      this.oneSignal.handleNotificationReceived().subscribe(() => {
+        // do something when notification is received
       });
-      this._window.plugins.OneSignal.handleNotificationOpened().subscribe(() => {
-        // handle opened here how you wish.
+
+      this.oneSignal.handleNotificationOpened().subscribe(() => {
+        // do something when a notification is opened
       });
-      // this._window.plugins.OneSignal.endInit();
+
+      this.oneSignal.endInit();
     });
   }
 
