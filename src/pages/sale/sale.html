@@ -14,18 +14,22 @@
 
 
 <ion-content>
+	<div padding class="sale-title">
+		<h1>{{ sale.titulo }}</h1>
+	</div>
+
 	<ion-list no-lines>
-	  <button ion-item *ngFor="let product of products">
+	  <button ion-item *ngFor="let item of sale.itens">
 			<ion-card>
 				<ion-card-content>
 					<ion-grid>
 					  <ion-row>
 					    <ion-col col-3>
-	    					<img class="product-img" src="assets/img/products/tixan.png"/>
+								<img class="product-img" alt="Imagem Produto" src="assets/img/products/tixan.png"/>
 					    </ion-col>
 					    <ion-col col-9>
-					    	<div class="product-title">{{ product.produto }}</div>
-						    <div class="product-value">{{ product.valor }}</div>
+								<div class="product-title">{{ item.nome }}</div>
+								<div class="product-value">{{ item.preco }}</div>
 					   	</ion-col>
 					  </ion-row>
 					</ion-grid>

@@ -16,12 +16,12 @@
 
 <ion-content>
 	<ion-list no-lines>
-	  <button ion-item *ngFor="let sale of sales" (click)="pushSalePage()">
+	  <button ion-item *ngFor="let sale of sales" (click)="pushSalePage(sale.id)">
 			<ion-card>
 				<img src="assets/img/sales/sales.png"/>
 				<ion-card-content>
 					<ion-card-title>
-						{{ sale.title }}
+						{{ sale.titulo }}
 					</ion-card-title>
 					<div class="sales-date">
 						<div class="label">Apenas</div>
@@ -29,7 +29,7 @@
 						<div class="month">Jun</div>
 					</div>
 					<div class="sales-desc">
-						<p>{{ sale.description }}</p>
+						<p>{{ sale.observacao }}</p>
 					</div>
 				</ion-card-content>
 			</ion-card>

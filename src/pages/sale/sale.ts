@@ -14,29 +14,13 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class SalePage {
 	endpoint: string = 'https://1-dot-full-market.appspot.com/promocao';
-	products: Array<any>;
+	sale: Array<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
-		this.pullSales();
+	  this.sale = navParams.get('sale');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SalePage');
-  }
-
-  pullSales() {
-    return new Promise((resolve, reject) => {
-      this.http.get(this.endpoint).map(res => {
-        try {
-          let json = res.json();
-          
-          return json;
-        } catch(e) {
-          console.log('error: ', e);
-        }
-      }).subscribe(data => {
-      	this.products = data;
-      });
-    });
   }
 }
